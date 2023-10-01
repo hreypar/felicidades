@@ -8,7 +8,7 @@
 # URL de la Fuente: https://qiuyiwu.github.io/2019/01/29/Birthday/
 # --------------------------------------------------------
 # set up log 
-sink(snakemake@log[[0]])
+sink(file = snakemake@log[[1]], append = TRUE, type = c("output", "message"), split = TRUE)
 
 # Cargar librerias 
 library(lubridate)
@@ -22,7 +22,7 @@ message("\nLoaded required libraries")
 # --------------------------------------------------------
 # Parametros para el nombre del archivo de salida y el nombre
 nombre <- snakemake@params[["nombre"]]
-grafica_out <- snakemake@output[[0]]
+grafica_out <- snakemake@output[[1]]
 fecha_de_nacimiento <- snakemake@params[["dob"]] 
 
 # Parametros del pastel
@@ -49,13 +49,13 @@ x <- gsub(year(fecha_de_nacimiento), year(today()), fecha_de_nacimiento)
 
 if(x == hoy) {
   pastel <- TRUE
-  mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " ¡Feliz Cumpleaños!")
+  mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " ¡¡Feliz Cumpleaños!!")
   } else if(x >= (hoy - days(3)) & x <= hoy) {
     pastel <- TRUE
-    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " ¡Ya casi es tu cumpleaños, felicidades!")
+    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), "¡¡Acaba de ser tu cumpleaños, felicidades!!")
   } else if(x >= hoy & x <= (hoy + days(3))) {
     pastel <- TRUE
-    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " ¡Acaba de ser tu cumpleaños, felicidades!")
+    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " ¡¡Ya casi es tu cumpleaños, felicidades!!")
 
   } else {
     pastel <- FALSE
