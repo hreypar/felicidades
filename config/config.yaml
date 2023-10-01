@@ -1,0 +1,12 @@
+# this file contains everything to configure the workflow on a global scale.
+# In case of sample based data, it should be complemented by a samples file that contains
+# one row per sample that can easily be parsed e.g. via pandas
+
+festejadx:
+    nombre: "Isra"
+    fecha: "1987/10/06"
+
+pastel:
+    color: "#5e0b41"
+    frosting: "#800F58"
+
