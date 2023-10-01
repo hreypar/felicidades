@@ -1,0 +1,11 @@
+name: graficar_pastel
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - r-base
+    - r-ggplot2
+    - r-lubridate
+    - r-plotrix
+
