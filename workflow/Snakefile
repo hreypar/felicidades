@@ -17,7 +17,10 @@ configfile: "config/config.yaml"
 include: "rules/felicitar_con_pastel.smk"
 
 # rule all
- rule all:
-     input:
-         expand("results/celebracion/felicitaciones_para_{persona}.pdf", persona = config[fextejadx][nombre])
+rule all:
+    input:
+        expand("results/celebracion/felicitaciones_para_{persona}.pdf", persona = config['festejadx']['nombre'])
+
+# actualmente solo festejamos a una persona (para que sea especial o asi jeje)
+# como festejariamos a mas de una persona a lmismo tiempo?
 
