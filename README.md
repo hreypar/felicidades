@@ -13,6 +13,25 @@ The usage of this workflow is described in the [Snakemake Workflow Catalog](http
 
 If you use this workflow in a paper, don't forget to give credits to the authors by citing the URL of this (original) <repo>sitory and its DOI (see above).
 
+### Instructions
+
+```
+pwd
+
+conda install snakemake env
+
+conda activate snakemake env
+
+git clone repositorio
+
+cd repositorio
+
+snakemake --use-conda --cores 2 (?)
+
+ls results 
+(debe estar el pdf con el pastel alli)
+```
+
 # TODO
 
 * Replace `<owner>` and `<repo>` everywhere in the template (also under .github/workflows) with the correct `<repo>` name and owning user or organization.
