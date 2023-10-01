@@ -1,3 +1,4 @@
+#!/usr/bin/R
 # --------------------------------------------------------
 # Nombre del Script: graficar_pastel.R
 # Descripcion: Preparacion de un pastel de cumple
@@ -6,29 +7,36 @@
 # Fuente de Inspiracion: Qiuyu's Blog
 # URL de la Fuente: https://qiuyiwu.github.io/2019/01/29/Birthday/
 # --------------------------------------------------------
+# set up log 
+sink(snakemake@log[[0]])
+
 # Cargar librerias 
 library(lubridate)
 library(plotrix)
 library(ggplot2)
 
+message("\nLoaded required libraries")
+
 # --------------------------------------------------------
 # Parametros del Pastel
 # --------------------------------------------------------
 # Parametros para el nombre del archivo de salida y el nombre
-nombre <- "Isra"
-grafica_out <- paste0("felicitaciones_para_", nombre, ".pdf")
-fecha_de_nacimiento <- "1987/10/06" 
+nombre <- snakemake@params[["nombre"]]
+grafica_out <- snakemake@output[[0]]
+fecha_de_nacimiento <- snakemake@params[["dob"]] 
 
 # Parametros del pastel
 size_pastel <- 10  
 color_capa_1 <- "#C0C0C0"  
-color_capa_2 <- "#5e0b41"  
-color_capa_3 <- "#800F58"  
+color_capa_2 <- snakemake@params[["flavor"]]  
+color_capa_3 <- snakemake@params[["frosting"]]  
 
 # Parametros de las Velas
 velas_posiciones <- matrix(c(2, 4.5, 3, 5, 4, 4.5, 5, 4.5, 6, 4.5, 7, 5.2, 8, 4.8), ncol = 2, byrow = TRUE)
 colores_velas <- c("#4EA5D9", "#688E26", "#2274A5", "#F75C03", "#688E26", "#17BEBB", "#224870", "#44CFCB")
 altura_velas <- 3.5
+
+message("\nLoaded and created parameters")
 
 # --------------------------------------------------------
 # Funcion para determinar si hay cumpleaños
@@ -74,22 +82,11 @@ if(x == hoy) {
       theme_minimal() + ggtitle(mensaje)
   }
 
+message("\nDetermined if today is a birthday")
+
 # --------------------------------------------------------
 # Funcion para Dibujar una Vela en la Posicion Especificada
 # --------------------------------------------------------
-# dibujar_vela <- function(pos, color)
-# {
-#   x = pos[1]
-#   y = pos[2]
-#   
-#   # Dibujar el cuerpo de la vela como un rectangulo del color especificado
-#   rect(x, y, x + .2, y + altura_velas, col = color)
-#   
-#   # Dibujar la llama de la vela como un poligono amarillo
-#   polygon(c(x + .05, x - .1, x + .1, x + .3, x + .15, x + 0.05), 
-#           c(y + altura_velas, y + altura_velas + 0.3, y + altura_velas + 0.6, y + altura_velas + 0.3, y + altura_velas, y + altura_velas), col = "#FFD700")
-# }
-
 dibujar_vela <- function(pos, color, altura)
 {
   x = pos[1]
@@ -139,3 +136,8 @@ if(pastel) {
 }
 
 dev.off()
+
+message("\nCreated plot to congratulate friend!")
+
+# close log
+sink()
