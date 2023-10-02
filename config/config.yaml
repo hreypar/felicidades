@@ -2,11 +2,10 @@
 # In case of sample based data, it should be complemented by a samples file that contains
 # one row per sample that can easily be parsed e.g. via pandas
 
-festejadx:
-    nombre: "Isra"
-    fecha: "1987/10/06"
-
-pastel:
-    color: "#5e0b41"
-    frosting: "#800F58"
+cumples_data:
+    filename: "config/cumpleaneros_octubre.csv"
+    nombre: "friend"
+    fecha: "date_of_birth"
+    color_pastel: "sabor"
+    color_frosting: "frosting"
 
