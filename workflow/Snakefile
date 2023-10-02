@@ -9,18 +9,25 @@
 from snakemake.utils import min_version
 from snakemake.exceptions import WorkflowError
 
+import os
+import pandas as pd
+
 min_version("6.4.1")
 
 configfile: "config/config.yaml"
 
 # rules 
+include: "rules/common.smk"
 include: "rules/felicitar_con_pastel.smk"
 
-# rule all
+festejades = ['Oscar','Ericka', 'Isra', 'Hele', 'KimK']
+
+# everyone in the table would be like this
+#festejades = cumples_table['nombre']
+
+# festejanding a muchas personas
+#
 rule all:
     input:
-        expand("results/celebracion/felicitaciones_para_{persona}.pdf", persona = config['festejadx']['nombre'])
-
-# actualmente solo festejamos a una persona (para que sea especial o asi jeje)
-# como festejariamos a mas de una persona a lmismo tiempo?
+        expand("results/celebracion/felicitaciones_para_{persona}.pdf", persona = festejades)
 
