@@ -59,14 +59,14 @@ ls results/celebracion
 
 ### Use your own data
 
-If you want to congratulate your own friends, you only need to add (or edit) a csv table similar to [`cumpleaneros_octubre.tsv`](https://github.com/hreypar/felicidades/blob/main/config/cumpleaneros_octubre.csv) with your own people's birthdays and update the [`config/config.yaml`](https://github.com/hreypar/felicidades/blob/main/config/config.yaml) file accordingly.
+If you want to congratulate your own friends with virtual cakes, you only need to add (or edit) a csv table similar to [`config/cumpleaneros_octubre.tsv`](https://github.com/hreypar/felicidades/blob/main/config/cumpleaneros_octubre.csv) with your own people's birthdays and update the [`config/config.yaml`](https://github.com/hreypar/felicidades/blob/main/config/config.yaml) file accordingly.
 
 
 ## Project structure
 
 ```
 .
-├── benchmarks                           # Directory for benchmark data
+├── benchmarks                           # Directory for benchmark data (automatically generated)
 │   └── celebracion
 │       └── pastel_Bill.tsv              # Sample benchmark data for celebration
 │
@@ -78,7 +78,7 @@ If you want to congratulate your own friends, you only need to add (or edit) a c
 ├── LICENSE                              # License file for the project
 ├── README.md                            # Main project README file
 │
-├── results                              # Directory for generated results
+├── results                              # Directory for generated results (automatically generated)
 │   └── celebracion
 │       ├── felicitaciones_para_Bill.pdf  # Example birthday greeting PDF
 │       └── pastel_Bill.log              # Log file for the creation of Bill's pastel
@@ -98,7 +98,7 @@ If you want to congratulate your own friends, you only need to add (or edit) a c
 
 ## Additional Information
 
-What I actually do is Bioinformatics and Computational Biology, particularly analysis of sequencing data (both bulk and single-cell). However, my good friend [Israel Aguilar](https://github.com/Iaguilaror) (also a bioinformatician) has a birthday coming up. [Reproducible code](https://en.wikipedia.org/wiki/Reproducibility) is one of his favorite things in the world, and he's a pro creating workflows with [Nextflow](https://www.nextflow.io/) but I'm more on the Snakemake side so I thought I'd gift him an excuse to start learning it 🐍.
+What I actually do is Bioinformatics and Computational Biology, particularly analysis of sequencing data (both bulk and single-cell). As you might've inferred, ly do is Bioinformatics and Computational Biology 👩🏽‍ , particularly analysis of sequencing data (both bulk and single-cell). As you might've inferred, I think programing is fun! and my good friend [Israel Aguilar](https://github.com/Iaguilaror) (also a bioinformatician) has a birthday coming up 🎂. Now, [reproducible code](https://en.wikipedia.org/wiki/Reproducibility) is one of his favorite things in the world, and he's a pro at creating workflows with [Nextflow](https://www.nextflow.io/) but I'm more on the Snakemake side so I thought I'd gift him an excuse to start learning it 🐍.
 
 ### Authors
 
