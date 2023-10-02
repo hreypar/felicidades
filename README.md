@@ -58,7 +58,7 @@ ls results/celebracion
 ```
 
 ### Input
-The input data for this project consists of a csv table of "cumpleaneros," which includes information about individuals celebrating their birthdays. The table contains the following columns:
+The input data for this project consists of a csv table of "cumpleaneros" (see example [here](https://github.com/hreypar/felicidades/blob/main/config/cumpleaneros_octubre.csv)), which includes information about individuals celebrating their birthdays. The table contains the following columns:
 
 - Name: The name of the person celebrating the birthday.
 - Birthday: The date of the birthday celebration.
@@ -69,12 +69,12 @@ The input data for this project consists of a csv table of "cumpleaneros," which
 The output of the project consists of a birthday greeting for each person listed in the input table. The workflow generates a PDF file containing a warm congratulatory message customized for the individual and a Birthday Cake if applicable (if it is in fact the person's birthday, a plot visualization representing their favorite cake flavor (color) is included).
 
 The actual output files are organized into the following structure within the results/celebracion/ directory:
-- felicitaciones_para_Name.pdf: Individualized PDF file for each person, where Name is replaced with the name of the individual (e.g., felicitaciones_para_Bill.pdf).
-- pastel_Name.log: Log file documenting the process of creating the birthday cake visualization for each person, where Name is replaced with the name of the individual (e.g., pastel_Bill.log).
+- felicitaciones_para_Name.pdf: Individualized PDF file, where Name is replaced with the name of the individual (e.g., felicitaciones_para_Bill.pdf).
+- pastel_Name.log: Log file documenting the process of creating the birthday cake visualization, where Name is replaced with the name of the individual (e.g., pastel_Bill.log).
 
 ### Use your own data
 
-If you want to congratulate your own friends with virtual cakes, you only need to add (or edit) a csv table similar to [`config/cumpleaneros_octubre.tsv`](https://github.com/hreypar/felicidades/blob/main/config/cumpleaneros_octubre.csv) with your own people's birthdays and update the [`config/config.yaml`](https://github.com/hreypar/felicidades/blob/main/config/config.yaml) file accordingly.
+If you want to congratulate your own friends with virtual cakes, you only need to add (or edit) a csv table similar to [`config/cumpleaneros_octubre.csv`](https://github.com/hreypar/felicidades/blob/main/config/cumpleaneros_octubre.csv) with your own people's birthdays and update the [`config/config.yaml`](https://github.com/hreypar/felicidades/blob/main/config/config.yaml) file accordingly.
 
 
 ## Project structure
