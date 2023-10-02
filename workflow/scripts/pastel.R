@@ -59,7 +59,7 @@ if(x == hoy) {
 
   } else {
     pastel <- FALSE
-    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " y no es tu cumpleaños :(")
+    mensaje <- paste0("Hoy es ", format(hoy, "%d/%m/%Y"), " y no es tu cumpleaños, ", nombre, " :(")
     
     # Cono de helado
     triangulo <- data.frame(x = c(1, 2.5, 4), y = c(4, 0, 4))
