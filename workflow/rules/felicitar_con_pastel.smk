@@ -10,13 +10,13 @@ rule felicitar_con_pastel:
         "results/celebracion/felicitaciones_para_{persona}.pdf"
     params:
         nombre = "{persona}",
-        dob = config['festejadx']['fecha'],
-        flavor = config['pastel']['color'],
-        frosting = config['pastel']['frosting']
+        dob = lambda wc: people.loc[wc.persona]['fecha'],
+        flavor = lambda wc: people.loc[wc.persona]['color_pastel'],
+        frosting = lambda wc: people.loc[wc.persona]['color_frosting']
     log:
         "results/celebracion/pastel_{persona}.log"
     benchmark:
-        "benchmarks/celebraciones/pastel_{persona}.tsv"
+        "benchmarks/celebracion/pastel_{persona}.tsv"
     script:
         "../scripts/pastel.R"
 
