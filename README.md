@@ -66,7 +66,7 @@ The input data for this project consists of a csv table of "cumpleaneros," which
 - Favorite Cake Frosting (Color): The favorite cake frosting represented by colors.
 
 ### Output
-The output of the project consists of individualized birthday greetings in PDF format. For each person listed in the input table, the project generates a personalized PDF file containing a warm congratulatory message customized for the individual and a Birthday Cake visualization if applicable (if it is the person's birthday, a cake visualization representing their favorite cake flavor (color) is included).
+The output of the project consists of a birthday greeting for each person listed in the input table. The workflow generates a PDF file containing a warm congratulatory message customized for the individual and a Birthday Cake if applicable (if it is in fact the person's birthday, a plot visualization representing their favorite cake flavor (color) is included).
 
 The actual output files are organized into the following structure within the results/celebracion/ directory:
 - felicitaciones_para_Name.pdf: Individualized PDF file for each person, where Name is replaced with the name of the individual (e.g., felicitaciones_para_Bill.pdf).
